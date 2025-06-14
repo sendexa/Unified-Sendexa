@@ -63,7 +63,7 @@ function toggleDropdown(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) {
             Collins Joe
           </span>
           <span className="mt-0.5 block text-theme-xs text-gray-500 dark:text-gray-400">
-            cyren@xtottel.com
+            cyren@Sendexa.com
           </span>
         </div>
 

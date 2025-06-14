@@ -3,8 +3,8 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "IP Whitelisting | Xtottel Dashboard",
-  description: "Manage IP whitelisting settings in the Xtottel Dashboard.",
+  title: "IP Whitelisting | Sendexa Dashboard",
+  description: "Manage IP whitelisting settings in the Sendexa Dashboard.",
 };
 
 export default function BlankPage() {

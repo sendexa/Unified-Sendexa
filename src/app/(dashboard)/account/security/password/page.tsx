@@ -3,8 +3,8 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Change Password | Xtottel Dashboard",
-  description: "Change your account password in the Xtottel Dashboard.",
+  title: "Change Password | Sendexa Dashboard",
+  description: "Change your account password in the Sendexa Dashboard.",
 };
 
 export default function BlankPage() {

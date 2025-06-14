@@ -3,8 +3,8 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Payment Methods | Xtottel Dashboard",
-  description: "Manage your payment methods in the Xtottel Dashboard.",
+  title: "Payment Methods | Sendexa Dashboard",
+  description: "Manage your payment methods in the Sendexa Dashboard.",
 };
 
 export default function BlankPage() {

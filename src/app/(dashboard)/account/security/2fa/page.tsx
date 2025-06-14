@@ -3,8 +3,8 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "2FA Security | Xtottel Dashboard",
-  description: "Manage your two-factor authentication settings in the Xtottel Dashboard.",
+  title: "2FA Security | Sendexa Dashboard",
+  description: "Manage your two-factor authentication settings in the Sendexa Dashboard.",
 };
 
 export default function BlankPage() {

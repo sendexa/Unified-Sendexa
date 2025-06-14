@@ -45,7 +45,7 @@ export default function SupportSidebar() {
 
       {/* FAQ Link */}
       <a
-        href="https://xtottel.com/support/"
+        href="https://Sendexa.com/support/"
         className="flex items-center justify-center p-2 mb-2 font-medium text-gray-900 rounded-lg bg-gray-200 text-theme-sm hover:bg-gray-300 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
       >
         <HelpCircle className="w-4 h-4 mr-2" />
@@ -54,7 +54,7 @@ export default function SupportSidebar() {
 
       {/* Contact Support */}
       <a
-        href="https://xtottel.com/contact"
+        href="https://Sendexa.com/contact"
         className="flex items-center justify-center p-2 mb-2 font-medium text-white rounded-lg bg-brand-500 text-theme-sm hover:bg-brand-600"
       >
         <Mail className="w-4 h-4 mr-2" />

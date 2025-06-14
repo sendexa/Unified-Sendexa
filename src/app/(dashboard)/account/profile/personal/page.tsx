@@ -5,9 +5,9 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "Personal Info | Xtottel Dashboard",
+  title: "Personal Info | Sendexa Dashboard",
   description:
-    "This is the profile page for Xtottel Dashboard built with React and Next.js",
+    "This is the profile page for Sendexa Dashboard built with React and Next.js",
 };
 
 export default function Profile() {

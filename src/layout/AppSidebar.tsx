@@ -499,7 +499,7 @@ const AppSidebar: React.FC = () => {
 
               {/* <Image 
               className="hidden dark:block"
-              src="/images/logo/xtottel-logo-white.png" 
+              src="/images/logo/Sendexa-logo-white.png" 
               alt="Xtotel Logo" 
               width={150} 
               height={40} 

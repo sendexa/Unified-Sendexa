@@ -3,8 +3,8 @@ import { Metadata } from "next";
 import React from "react";
 
 export const metadata: Metadata = {
-  title: "API Logs | Xtottel Dashboard",
-  description: "View and manage your API logs in the Xtottel Dashboard.",
+  title: "API Logs | Sendexa Dashboard",
+  description: "View and manage your API logs in the Sendexa Dashboard.",
 };
 
 export default function BlankPage() {
