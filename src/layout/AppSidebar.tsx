@@ -13,14 +13,14 @@ import {
   // Shield,
   // Terminal,
   MessageCircle,
-  Landmark,
-  ReceiptCent,
+  // Landmark,
+  // ReceiptCent,
   // User2,
-  Users,
+  // Users,
   // ChartPie,
   LockKeyhole,
-  Wallet,
-  Banknote,
+  // Wallet,
+  // Banknote,
   KeyRound,
   // PhoneCall,
   PieChart,
@@ -49,60 +49,60 @@ const navItems: NavItem[] = [
   },
 ];
 
-const FintechItems: NavItem[] = [
-  {
-    icon: <Banknote />,
-    name: "Payments",
-    path: "/fintech/payments",
-  },
-  {
-    icon: <ReceiptCent />,
-    name: "Invoicing",
-    subItems: [
-      { name: "All Invoices", path: "/fintech/invoicing" },
-      { name: "Recurring Invoices", path: "/fintech/invoicing/recurring", pro: true },
-      { name: "Quotes & Estimates", path: "/fintech/invoicing/estimates", pro: true },
-    ],
-  },
-  {
-    icon: <Users />,
-    name: "Customers",
-    path: "/fintech/customers",
-  },
-  {
-    icon: <Landmark />,
-    name: "Money",
-    subItems: [
-      { name: "Send Money", path: "/fintech/money/send" },
-      { name: "Request Money", path: "/fintech/money/request", pro: true },
-      { name: "Transfer History", path: "/fintech/money/history" },
-      { name: "Approvals", path: "/fintech/money/approvals" },
-    ],
-  },
-  {
-    icon: <Wallet />,
-    name: "Wallets",
-    subItems: [
-      { name: "Wallets", path: "/fintech/wallets" },
-      { name: "Bank Accounts", path: "/fintech/accounts" },
-      { name: "Payout Settings", path: "/fintech/settlement/payout" },
-    ],
-  },
-  // {
-  //   icon: <CreditCard />,
-  //   name: "Cards",
-  //   subItems: [
-  //     { name: "Virtual Cards", path: "/fintech/cards/virtual", pro: true },
-  //     { name: "Card Controls", path: "/fintech/cards/manage", pro: true },
-  //   ],
-  // },
-  // {
-  //   icon: <Repeat />,
-  //   name: "Subscriptions",
-  //   path: "/fintech/subscriptions",
-  //   pro: true,
-  // },
-];
+// const FintechItems: NavItem[] = [
+//   {
+//     icon: <Banknote />,
+//     name: "Payments",
+//     path: "/fintech/payments",
+//   },
+//   {
+//     icon: <ReceiptCent />,
+//     name: "Invoicing",
+//     subItems: [
+//       { name: "All Invoices", path: "/fintech/invoicing" },
+//       { name: "Recurring Invoices", path: "/fintech/invoicing/recurring", pro: true },
+//       { name: "Quotes & Estimates", path: "/fintech/invoicing/estimates", pro: true },
+//     ],
+//   },
+//   {
+//     icon: <Users />,
+//     name: "Customers",
+//     path: "/fintech/customers",
+//   },
+//   {
+//     icon: <Landmark />,
+//     name: "Money",
+//     subItems: [
+//       { name: "Send Money", path: "/fintech/money/send" },
+//       { name: "Request Money", path: "/fintech/money/request", pro: true },
+//       { name: "Transfer History", path: "/fintech/money/history" },
+//       { name: "Approvals", path: "/fintech/money/approvals" },
+//     ],
+//   },
+//   {
+//     icon: <Wallet />,
+//     name: "Wallets",
+//     subItems: [
+//       { name: "Wallets", path: "/fintech/wallets" },
+//       { name: "Bank Accounts", path: "/fintech/accounts" },
+//       { name: "Payout Settings", path: "/fintech/settlement/payout" },
+//     ],
+//   },
+//   {
+//     icon: <CreditCard />,
+//     name: "Cards",
+//     subItems: [
+//       { name: "Virtual Cards", path: "/fintech/cards/virtual", pro: true },
+//       { name: "Card Controls", path: "/fintech/cards/manage", pro: true },
+//     ],
+//   },
+//   {
+//     icon: <Repeat />,
+//     name: "Subscriptions",
+//     path: "/fintech/subscriptions",
+//     pro: true,
+//   },
+// ];
 
 const CommunicationItems: NavItem[] = [
   {
@@ -159,35 +159,6 @@ const CommunicationItems: NavItem[] = [
 
 
 
-// const CommunicationItems: NavItem[] = [
-//   {
-//     icon: <MessageCircle />,
-//     name: "SMS",
-//     subItems: [
-//       { name: "Send SMS", path: "/sms/send" }, 
-//       { name: "Sender IDs", path: "/sms/sender-ids", new: true },
-//       { name: "My Contacts", path: "/sms/contacts" },
-//       { name: "SMS Templates", path: "/sms/templates", new: true },
-//     ],
-//   },
-//   {
-//     icon: <LockKeyhole/>,
-//     name: "OTP",
-//     subItems: [
-//       { name: "Overview", path: "/otp/overview" },
-//       { name: "OTP Logs", path: "/otp/logs" },
-//     ],
-//   },
-//   {
-//     icon: <ChartPie />,
-//     name: "Reports",
-//     subItems: [
-//       { name: "Payment History", path: "/reports/payments" }, 
-//       { name: "SMS Delivery Reports", path: "/reports/sms" },
-//     ],
-//   },
-// ];
-
 const othersItems: NavItem[] = [
   {
     icon: <User />,
@@ -211,25 +182,6 @@ const othersItems: NavItem[] = [
 ];
 
 
-// const othersItems: NavItem[] = [
-//   {
-//     icon: <User />,
-//     name: "Profile",
-//     subItems: [
-//       { name: "Personal Info", path: "/account/profile/personal" },
-//       { name: "Business Info", path: "/account/profile/business" },
-//     ],
-//   },
-//   {
-//     icon: <KeyRound />,
-//     name: "API Keys",
-//      subItems: [
-//       { name: "API Keys", path: "/user/api-keys" },
-//       { name: "API Logs", path: "/account/api/logs" },
-//       { name: "IP Whitelisting", path: "/account/api/whitelist" },
-//     ],
-//   },
-// ];
 
 const AppSidebar: React.FC = () => {
   const { isExpanded, isMobileOpen, isHovered, setIsHovered } = useSidebar();
@@ -484,33 +436,11 @@ const AppSidebar: React.FC = () => {
           {isExpanded || isHovered || isMobileOpen ? (
             <>
               <Image
-                src="/images/logo/Site-Logo.png"
+                src="/images/logo/exaweb.png"
                 alt="Xtotel Logo"
                 width={150}
                 height={40}
               />
-              {/* <Image
-                className="dark:hidden"
-                src="/images/logo/logo.svg"
-                alt="Logo"
-                width={150}
-                height={40}
-              /> */}
-
-              {/* <Image 
-              className="hidden dark:block"
-              src="/images/logo/Sendexa-logo-white.png" 
-              alt="Xtotel Logo" 
-              width={150} 
-              height={40} 
-              /> */}
-              {/* <Image
-                className="hidden dark:block"
-                src="/images/logo/logo-dark.svg"
-                alt="Logo"
-                width={150}
-                height={40}
-              /> */}
             </>
           ) : (
             <Image
@@ -542,7 +472,7 @@ const AppSidebar: React.FC = () => {
               {renderMenuItems(navItems, "main")}
             </div>
 
-            <div className="">
+            {/* <div className="">
               <h2
                 className={`mb-4 text-xs uppercase flex leading-[20px] text-gray-400 ${
                   !isExpanded && !isHovered
@@ -557,7 +487,7 @@ const AppSidebar: React.FC = () => {
                 )}
               </h2>
               {renderMenuItems(FintechItems, "Fintech")}
-            </div>
+            </div> */}
 
             <div className="">
               <h2

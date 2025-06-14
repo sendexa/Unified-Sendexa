@@ -20,10 +20,7 @@ export function MessageForm() {
 
   // Sample sender IDs - replace with your actual data
   const senderIds = [
-    { id: 'marketing', name: 'Marketing' },
-    { id: 'support', name: 'Support' },
-    { id: 'notifications', name: 'Notifications' },
-    { id: 'alerts', name: 'Alerts' },
+    { id: 'sendexa', name: 'Sendexa' },
   ];
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
