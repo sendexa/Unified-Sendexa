@@ -1,12 +1,11 @@
 "use client";
 
-import React, { useEffect, useRef, useState } from "react";
-import {  AlignJustify, X } from "lucide-react";
-import Image from "next/image";
+import React, { useEffect, useRef } from "react";
+import { AlignJustify, X } from "lucide-react";
+import { useSidebar } from "./SidebarContext";
 
 const AppHeader: React.FC = () => {
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
-
+  const { isMobileOpen, toggleMobileSidebar } = useSidebar();
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -25,61 +24,32 @@ const AppHeader: React.FC = () => {
   }, []);
 
   return (
-    <>
-      {/* Overlay for mobile */}
-      {isMobileOpen && (
-        <div
-          onClick={() => setIsMobileOpen(false)}
-          className="fixed inset-0 z-40 bg-black/50 lg:hidden"
-        />
-      )}
-
-      {/* Sidebar (mobile only) */}
-      <aside
-        className={`fixed top-0 left-0 z-50 h-screen w-[260px] bg-[#00264d] border-r border-[#001f3a] transform transition-transform duration-300 lg:hidden ${
-          isMobileOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
-      >
-        <Image
-          src="/images/logo/exaweb.png"
-          alt="Logo"
-          width={130}
-          height={40}
-        />
-
-        <button onClick={() => setIsMobileOpen(false)}>
-          <X className="w-6 h-6 text-white" />
+    <header className="sticky top-0 flex w-full bg-white border-b border-gray-200 dark:border-gray-800 dark:bg-gray-900 z-50">
+      <div className="flex items-center justify-between w-full px-4 py-3 lg:px-6">
+        {/* Mobile Sidebar Toggle */}
+        <button
+          className="lg:hidden p-2 rounded-md border dark:border-gray-700 text-gray-600 dark:text-gray-300"
+          onClick={toggleMobileSidebar}
+          aria-label="Toggle Sidebar"
+        >
+          {isMobileOpen ? (
+            <X className="w-5 h-5" />
+          ) : (
+            <AlignJustify className="w-5 h-5" />
+          )}
         </button>
-        {/* Add actual menu here or keep it empty if you're rendering from AppSidebar */}
-      </aside>
 
-      <header className="sticky top-0 flex w-full bg-white border-b border-gray-200 dark:border-gray-800 dark:bg-gray-900 z-50">
-        <div className="flex items-center justify-between w-full px-4 py-3 lg:px-6">
-          {/* Mobile Sidebar Toggle */}
-          <button
-            className="lg:hidden p-2 rounded-md border dark:border-gray-700 text-gray-600 dark:text-gray-300"
-            onClick={() => setIsMobileOpen(!isMobileOpen)}
-            aria-label="Toggle Sidebar"
-          >
-            {isMobileOpen ? (
-              <X className="w-5 h-5" />
-            ) : (
-              <AlignJustify className="w-5 h-5" />
-            )}
-          </button>
-
-          {/* Optional Search (Ctrl+K focusable) */}
-          <div className="hidden lg:flex items-center w-full max-w-md ml-auto">
-            <input
-              ref={inputRef}
-              type="text"
-              placeholder="Search..."
-              className="w-full px-3 py-2 border rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-white"
-            />
-          </div>
+        {/* Optional Search (Ctrl+K focusable) */}
+        <div className="hidden lg:flex items-center w-full max-w-md ml-auto">
+          <input
+            ref={inputRef}
+            type="text"
+            placeholder="Search..."
+            className="w-full px-3 py-2 border rounded-md dark:bg-gray-800 dark:border-gray-700 dark:text-white"
+          />
         </div>
-      </header>
-    </>
+      </div>
+    </header>
   );
 };
 

@@ -3,15 +3,16 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useSidebar } from "@/context/SidebarContext";
+import { useSidebar } from "./SidebarContext";
 import { NavItem } from "../types";
 import navData from "./navigation.json";
 import { iconMap } from "../utils/iconMap";
 import { ChevronDown } from "lucide-react";
 
 const AppSidebar: React.FC = () => {
-  const { isMobileOpen } = useSidebar(); // use context
+  const { isMobileOpen } = useSidebar();
   const pathname = usePathname();
+
   const navItems: NavItem[] = navData.navItems.map((item) => ({
     ...item,
     icon: iconMap[item.icon],
@@ -25,6 +26,7 @@ const AppSidebar: React.FC = () => {
     type: "main" | "others";
     index: number;
   } | null>(null);
+
   const [subMenuHeight, setSubMenuHeight] = useState<Record<string, number>>({});
   const subMenuRefs = useRef<Record<string, HTMLDivElement | null>>({});
 
@@ -54,6 +56,18 @@ const AppSidebar: React.FC = () => {
       }
     }
   }, [openSubmenu]);
+
+  useEffect(() => {
+    if (isMobileOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+
+    return () => {
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [isMobileOpen]);
 
   const handleSubmenuToggle = (index: number, menuType: "main" | "others") => {
     setOpenSubmenu((prev) =>
@@ -144,7 +158,7 @@ const AppSidebar: React.FC = () => {
 
   return (
     <aside
-      className={`fixed top-0 left-0 z-50 h-screen w-[260px] bg-[#00264d] text-gray-200 border-r border-[#001f3a] transition-transform duration-300 ${
+      className={`fixed top-0 left-0 z-50 h-screen w-[260px] bg-[#00264d] text-gray-200 border-r border-[#001f3a] transition-transform duration-300 ease-in-out ${
         isMobileOpen ? "translate-x-0" : "-translate-x-full"
       } lg:translate-x-0`}
     >
@@ -159,7 +173,7 @@ const AppSidebar: React.FC = () => {
         </Link>
       </div>
 
-      <nav className="flex flex-col overflow-y-auto px-4 no-scrollbar">
+      <nav className="flex flex-col overflow-y-auto px-4 pb-6 no-scrollbar h-full">
         <div className="mb-4">
           <h2 className="text-xs uppercase text-gray-400 mb-2">Menu</h2>
           {renderMenuItems(navItems, "main")}

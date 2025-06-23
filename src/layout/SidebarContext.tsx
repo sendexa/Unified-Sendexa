@@ -81,22 +81,5 @@ return (
   </SidebarContext.Provider>
 );
 
-  // return (
-  //   <SidebarContext.Provider
-  //     value={{
-  //       isExpanded: isMobile ? false : isExpanded,
-  //       isMobileOpen,
-  //       isHovered,
-  //       activeItem,
-  //       openSubmenu,
-  //       toggleSidebar,
-  //       toggleMobileSidebar,
-  //       setIsHovered,
-  //       setActiveItem,
-  //       toggleSubmenu,
-  //     }}
-  //   >
-  //     {children}
-  //   </SidebarContext.Provider>
-  // );
+
 };

@@ -1,4 +1,5 @@
-import { useSidebar } from "@/context/SidebarContext";
+"use client";
+import { useSidebar } from "@/layout/SidebarContext";
 import React from "react";
 
 const Backdrop: React.FC = () => {
@@ -8,8 +9,10 @@ const Backdrop: React.FC = () => {
 
   return (
     <div
-      className="fixed inset-0 z-40 bg-gray-900/50 lg:hidden"
+      className="fixed inset-0 z-40 bg-gray-900/50 transition-opacity duration-300 lg:hidden"
       onClick={toggleMobileSidebar}
+      role="presentation"
+      aria-hidden="true"
     />
   );
 };
