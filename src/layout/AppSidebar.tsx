@@ -157,11 +157,14 @@ const AppSidebar: React.FC = () => {
   );
 
   return (
-    <aside
-      className={`fixed top-0 left-0 z-50 h-screen w-[260px] bg-[#00264d] text-gray-200 border-r border-[#001f3a] transition-transform duration-300 ease-in-out ${
-        isMobileOpen ? "translate-x-0" : "-translate-x-full"
-      } lg:translate-x-0`}
-    >
+    // In AppSidebar.tsx, update the aside className:
+<aside
+  className={`fixed top-0 left-0 z-[60] h-screen w-[260px] bg-[#00264d] text-gray-200 border-r border-[#001f3a] transition-transform duration-300 ease-in-out ${
+    isMobileOpen ? "translate-x-0" : "-translate-x-full"
+  } lg:translate-x-0`}
+>
+
+
       <div className="py-6 px-4">
         <Link href="/">
           <Image
