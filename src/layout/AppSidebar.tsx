@@ -10,7 +10,7 @@ import { iconMap } from "../utils/iconMap";
 import { ChevronDown } from "lucide-react";
 
 const AppSidebar: React.FC = () => {
-  const { isMobileOpen } = useSidebar();
+  const { isMobileOpen, toggleMobileSidebar } = useSidebar();
   const pathname = usePathname();
 
   const navItems: NavItem[] = navData.navItems.map((item) => ({
@@ -77,6 +77,12 @@ const AppSidebar: React.FC = () => {
     );
   };
 
+  const handleLinkClick = () => {
+    if (isMobileOpen) {
+      toggleMobileSidebar();
+    }
+  };
+
   const renderMenuItems = (items: NavItem[], type: "main" | "others") => (
     <ul className="flex flex-col gap-2">
       {items.map((nav, index) => (
@@ -103,6 +109,7 @@ const AppSidebar: React.FC = () => {
           ) : (
             <Link
               href={nav.path ?? "#"}
+              onClick={handleLinkClick}
               className={`group flex items-center gap-3 px-2 py-2 text-sm font-medium rounded-md transition-all w-full ${
                 isActive(nav.path ?? "")
                   ? "bg-[#003366] text-white"
@@ -131,6 +138,7 @@ const AppSidebar: React.FC = () => {
                   <li key={subItem.name}>
                     <Link
                       href={subItem.path}
+                      onClick={handleLinkClick}
                       className={`block px-2 py-1.5 rounded-md transition-colors ${
                         isActive(subItem.path)
                           ? "bg-[#003366] text-white"
@@ -157,16 +165,13 @@ const AppSidebar: React.FC = () => {
   );
 
   return (
-    // In AppSidebar.tsx, update the aside className:
-<aside
-  className={`fixed top-0 left-0 z-[60] h-screen w-[260px] bg-[#00264d] text-gray-200 border-r border-[#001f3a] transition-transform duration-300 ease-in-out ${
-    isMobileOpen ? "translate-x-0" : "-translate-x-full"
-  } lg:translate-x-0`}
->
-
-
+    <aside
+      className={`fixed top-0 left-0 z-[60] h-screen w-[260px] bg-[#00264d] text-gray-200 border-r border-[#001f3a] transition-transform duration-300 ease-in-out ${
+        isMobileOpen ? "translate-x-0" : "-translate-x-full"
+      } lg:translate-x-0`}
+    >
       <div className="py-6 px-4">
-        <Link href="/">
+        <Link href="/" onClick={handleLinkClick}>
           <Image
             src="/images/logo/exaweb.png"
             alt="Logo"
