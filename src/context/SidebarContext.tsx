@@ -62,23 +62,41 @@ export const SidebarProvider: React.FC<{ children: React.ReactNode }> = ({
   const toggleSubmenu = (item: string) => {
     setOpenSubmenu((prev) => (prev === item ? null : item));
   };
+return (
+  <SidebarContext.Provider
+    value={{
+      isExpanded: isMobile ? isMobileOpen : isExpanded,
+      isMobileOpen,
+      isHovered,
+      activeItem,
+      openSubmenu,
+      toggleSidebar,
+      toggleMobileSidebar,
+      setIsHovered,
+      setActiveItem,
+      toggleSubmenu,
+    }}
+  >
+    {children}
+  </SidebarContext.Provider>
+);
 
-  return (
-    <SidebarContext.Provider
-      value={{
-        isExpanded: isMobile ? false : isExpanded,
-        isMobileOpen,
-        isHovered,
-        activeItem,
-        openSubmenu,
-        toggleSidebar,
-        toggleMobileSidebar,
-        setIsHovered,
-        setActiveItem,
-        toggleSubmenu,
-      }}
-    >
-      {children}
-    </SidebarContext.Provider>
-  );
+  // return (
+  //   <SidebarContext.Provider
+  //     value={{
+  //       isExpanded: isMobile ? false : isExpanded,
+  //       isMobileOpen,
+  //       isHovered,
+  //       activeItem,
+  //       openSubmenu,
+  //       toggleSidebar,
+  //       toggleMobileSidebar,
+  //       setIsHovered,
+  //       setActiveItem,
+  //       toggleSubmenu,
+  //     }}
+  //   >
+  //     {children}
+  //   </SidebarContext.Provider>
+  // );
 };

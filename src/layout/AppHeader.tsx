@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-import { MoreHorizontal, X } from "lucide-react";
+import {  AlignJustify, X } from "lucide-react";
+import Image from "next/image";
 
 const AppHeader: React.FC = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -39,12 +40,16 @@ const AppHeader: React.FC = () => {
           isMobileOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between px-4 py-4">
-          <img src="/images/logo/exaweb.png" alt="Logo" width={130} />
-          <button onClick={() => setIsMobileOpen(false)}>
-            <X className="w-6 h-6 text-white" />
-          </button>
-        </div>
+        <Image
+          src="/images/logo/exaweb.png"
+          alt="Logo"
+          width={130}
+          height={40}
+        />
+
+        <button onClick={() => setIsMobileOpen(false)}>
+          <X className="w-6 h-6 text-white" />
+        </button>
         {/* Add actual menu here or keep it empty if you're rendering from AppSidebar */}
       </aside>
 
@@ -59,7 +64,7 @@ const AppHeader: React.FC = () => {
             {isMobileOpen ? (
               <X className="w-5 h-5" />
             ) : (
-              <MoreHorizontal className="w-5 h-5" />
+              <AlignJustify className="w-5 h-5" />
             )}
           </button>
 
