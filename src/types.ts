@@ -8,7 +8,37 @@ export interface ApiKey {
   lastUsed?: string;
 }
 
-// types.ts
+
+// type NavItem = {
+//   name: string;
+//   icon: React.ReactNode;
+//   path?: string;
+//   subItems?: {
+//     name: string;
+//     path: string;
+//     pro?: boolean;
+//     new?: boolean;
+//     badge?: string;
+//   }[];
+//   pro?: boolean;
+// };
+
+export interface NavItem {
+  name: string;
+  icon: React.ReactNode;
+  path?: string;
+  subItems?: {
+    name: string;
+    path: string;
+    pro?: boolean;
+    new?: boolean;
+    badge?: string;
+  }[];
+  pro?: boolean;
+};
+
+
+
 export interface SMSPlan {
   id: string;
   name: string;
