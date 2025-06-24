@@ -3,11 +3,16 @@
     {
       "icon": "GridIcon",
       "name": "Dashboard",
+      "path": "/"
+    },
+
+    {
+      "icon": "PieChart",
+      "name": "Analytics",
       "subItems": [
-        { "name": "Overview", "path": "/" },
-        { "name": "SMS Reports", "path": "/dashboard/sms-reports" },
-        { "name": "OTP Reports", "path": "/dashboard/otp-reports" },
-        { "name": "Email Reports", "path": "/dashboard/email-reports" }
+        { "name": "SMS Analytics", "path": "/analytics/sms" },
+        { "name": "OTP Analytics", "path": "/analytics/otp" },
+        { "name": "Email Analytics", "path": "/analytics/email" }
       ]
     },
     {

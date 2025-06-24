@@ -23,8 +23,7 @@ const AppHeader: React.FC = () => {
     };
   }, []);
 
-  return (
-    // <header className="sticky top-0 flex w-full bg-white border-b border-gray-200 dark:border-gray-800 dark:bg-gray-900 z-50">
+  return (   
     <header className="sticky top-0 flex w-full bg-white border-b border-gray-200 dark:border-gray-800 dark:bg-gray-900 z-50">
       <div className="flex items-center justify-between w-full px-4 py-3 lg:px-6">
         {/* Mobile Sidebar Toggle */}
