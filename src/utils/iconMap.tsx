@@ -7,6 +7,7 @@ import {
   User,
   KeyRound,
   PieChart,
+  Users,
 } from "lucide-react";
 import { JSX } from "react";
 
@@ -19,4 +20,5 @@ export const iconMap: Record<string, JSX.Element> = {
   User: <User size={18} />,
   KeyRound: <KeyRound size={18} />,
   PieChart: <PieChart size={18} />,
+  Users: <Users size={18} />,
 };
