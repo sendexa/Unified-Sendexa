@@ -5,7 +5,6 @@
       "name": "Dashboard",
       "path": "/"
     },
-
     {
       "icon": "PieChart",
       "name": "Analytics",
@@ -45,6 +44,15 @@
       ]
     },
     {
+      "icon": "Hash",
+      "name": "USSD",
+      "subItems": [
+        { "name": "Create Code", "path": "/ussd/create" },
+        { "name": "Sessions", "path": "/ussd/sessions" },
+        { "name": "Shortcodes", "path": "/ussd/shortcodes" }
+      ]
+    },
+    {
       "icon": "CreditCard",
       "name": "Billing",
       "subItems": [
@@ -55,33 +63,29 @@
       ]
     }
   ],
-"othersItems": [
-  {
-    "icon": "User",
-    "name": "Profile",
-    "path": "/account/profile"
-  },
-   {
-    "icon": "Users",
-    "name": "Employees",
-    "subItems": [
-      { "name": "Members", "path": "/account/team/members" },
-      { "name": "Invitations", "path": "/account/team/invitations" },
-      { "name": "Roles & Permissions", "path": "/account/team/roles" },
-      { "name": "Audit Logs", "path": "/account/team/logs", "badge": "soon" }
-    ]
-  },
-  {
-    "icon": "KeyRound",
-    "name": "API & Developer",
-    "subItems": [
-      { "name": "API Keys", "path": "/account/api/keys" },
-      { "name": "API Logs", "path": "/account/api/logs" },
-      { "name": "IP Whitelisting", "path": "/account/api/whitelist" },
-      { "name": "Webhooks", "path": "/account/api/webhooks", "badge": "beta" }
-    ]
-  }
- 
-]
-
+  "othersItems": [
+    {
+      "icon": "User",
+      "name": "Profile",
+      "path": "/account/profile"
+    },
+    {
+      "icon": "Users",
+      "name": "Employees",
+      "subItems": [
+        { "name": "Members", "path": "/account/team/members" },
+        { "name": "Audit Logs", "path": "/account/team/logs", "badge": "soon" }
+      ]
+    },
+    {
+      "icon": "KeyRound",
+      "name": "API & Developer",
+      "subItems": [
+        { "name": "API Keys", "path": "/account/api/keys" },
+        { "name": "API Logs", "path": "/account/api/logs" },
+        { "name": "IP Whitelisting", "path": "/account/api/whitelist" },
+        { "name": "Webhooks", "path": "/account/api/webhooks", "badge": "beta" }
+      ]
+    }
+  ]
 }
