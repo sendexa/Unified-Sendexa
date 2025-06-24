@@ -68,7 +68,7 @@ const ResetPasswordForm = () => {
                   <Input
                     type={showPassword ? "text" : "password"}
                     placeholder="Enter your new password"
-                    value={password}
+                    // value={password}
                     onChange={handlePasswordChange}
                   />
                   <span
@@ -93,7 +93,7 @@ const ResetPasswordForm = () => {
                   <Input
                     type={showConfirmPassword ? "text" : "password"}
                     placeholder="Confirm your new password"
-                    value={confirmPassword}
+                    // value={confirmPassword}
                     onChange={handleConfirmPasswordChange}
                   />
                   <span
