@@ -15,7 +15,10 @@ interface InputProps {
   success?: boolean;
   error?: boolean;
   hint?: string; // Optional hint text
+  value?: string | number; // Optional value prop for controlled input
 }
+
+
 
 const Input: FC<InputProps> = ({
   type = "text",

@@ -2,23 +2,67 @@
 import Checkbox from "@/components/form/input/Checkbox";
 import Input from "@/components/form/input/InputField";
 import Label from "@/components/form/Label";
-import {  EyeCloseIcon, EyeIcon } from "@/icons";
+import { EyeCloseIcon, EyeIcon } from "@/icons";
 import Link from "next/link";
 import React, { useState } from "react";
-import Image
- from "next/image";
+import Image from "next/image";
+
 export default function SignUpForm() {
   const [showPassword, setShowPassword] = useState(false);
   const [isChecked, setIsChecked] = useState(false);
+  const [fname, setFname] = useState("");
+  const [lname, setLname] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setError("");
+    setSuccess("");
+    try {
+      const res = await fetch("/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email,
+          password,
+          first_name: fname,
+          last_name: lname,
+          phone,
+        }),
+      });
+      const data = await res.json();
+      setLoading(false);
+      if (!res.ok) {
+        setError(data.error || "Signup failed");
+      } else {
+        setSuccess(
+          "Signup successful! Please check your email to verify your account."
+        );
+      }
+    } catch {
+      setLoading(false);
+      setError("An unexpected error occurred.");
+    }
+  };
+
   return (
     <div className="flex flex-col flex-1 lg:w-1/2 w-full overflow-y-auto no-scrollbar">
-
       <div className="flex flex-col justify-center flex-1 w-full max-w-md mx-auto">
-
         {/* Logo section */}
-                <div className="flex justify-center mb-8 md:hidden">
-                  <Image src="/images/logo/xtottel-logo.png" alt="Xtotel Logo" width={231} height={48} />
-                </div>
+        <div className="flex justify-center mb-8 md:hidden">
+          <Image
+            src="/images/logo/xtottel-logo.png"
+            alt="Xtotel Logo"
+            width={231}
+            height={48}
+          />
+        </div>
         <div>
           <div className="mb-5 sm:mb-8">
             <h1 className="mb-2 font-semibold text-gray-800 text-title-sm dark:text-white/90 sm:text-title-md">
@@ -33,7 +77,7 @@ export default function SignUpForm() {
               
             </div> */}
 
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="space-y-5">
                 <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                   {/* <!-- First Name --> */}
@@ -46,6 +90,8 @@ export default function SignUpForm() {
                       id="fname"
                       name="fname"
                       placeholder="Enter your first name"
+                      value={fname}
+                      onChange={(e) => setFname(e.target.value)}
                     />
                   </div>
                   {/* <!-- Last Name --> */}
@@ -58,6 +104,8 @@ export default function SignUpForm() {
                       id="lname"
                       name="lname"
                       placeholder="Enter your last name"
+                      value={lname}
+                      onChange={(e) => setLname(e.target.value)}
                     />
                   </div>
                 </div>
@@ -71,6 +119,8 @@ export default function SignUpForm() {
                     id="email"
                     name="email"
                     placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                   />
                 </div>
                 {/* <!-- Phone Number --> */}
@@ -83,6 +133,8 @@ export default function SignUpForm() {
                     id="tel"
                     name="tel"
                     placeholder="Enter your Phone Number"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
                   />
                 </div>
                 {/* <!-- Password --> */}
@@ -94,6 +146,8 @@ export default function SignUpForm() {
                     <Input
                       placeholder="Enter your password"
                       type={showPassword ? "text" : "password"}
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
                     />
                     <span
                       onClick={() => setShowPassword(!showPassword)}
@@ -125,10 +179,19 @@ export default function SignUpForm() {
                     </span>
                   </p>
                 </div>
+                {/* <!-- Error/Success Message --> */}
+                {error && <div className="text-error-500 text-sm">{error}</div>}
+                {success && (
+                  <div className="text-success-500 text-sm">{success}</div>
+                )}
                 {/* <!-- Button --> */}
                 <div>
-                  <button className="flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white transition rounded-lg bg-brand-500 shadow-theme-xs hover:bg-brand-600">
-                    Sign Up
+                  <button
+                    type="submit"
+                    className="flex items-center justify-center w-full px-4 py-3 text-sm font-medium text-white transition rounded-lg bg-brand-500 shadow-theme-xs hover:bg-brand-600"
+                    disabled={loading}
+                  >
+                    {loading ? "Signing up..." : "Sign Up"}
                   </button>
                 </div>
               </div>
@@ -141,7 +204,7 @@ export default function SignUpForm() {
                   href="/login"
                   className="text-brand-500 hover:text-brand-600 dark:text-brand-400"
                 >
-                   Login
+                  Login
                 </Link>
               </p>
             </div>

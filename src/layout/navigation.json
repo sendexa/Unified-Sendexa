@@ -82,9 +82,7 @@
       "name": "API & Developer",
       "subItems": [
         { "name": "API Keys", "path": "/account/api/keys" },
-        { "name": "API Logs", "path": "/account/api/logs" },
-        { "name": "IP Whitelisting", "path": "/account/api/whitelist" },
-        { "name": "Webhooks", "path": "/account/api/webhooks", "badge": "beta" }
+        { "name": "API Logs", "path": "/account/api/logs", "badge": "soon" }
       ]
     }
   ]
